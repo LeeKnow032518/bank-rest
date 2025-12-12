@@ -1,0 +1,3 @@
+databaseChangeLog:
+  - include:
+      file: "db/migration/V001__create_cards_table.yaml"

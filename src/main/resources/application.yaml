@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: bank.rest
+  datasource:
+    url: ${POSTGRES_URL:jdbc:postgresql://localhost:5432/bank-cards}
+    username: ${POSTGRES_USER:postgres}
+    password: ${POSTGRES_PASSWORD:postgres}
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: validate
+  liquibase:
+    enabled: true
+    change-log: classpath:db/changelog/db.changelog-master.yaml
+
+server:
+  servlet:
+    contextPath: /
+  port: 8080

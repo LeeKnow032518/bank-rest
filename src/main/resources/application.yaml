@@ -2,7 +2,7 @@ spring:
   application:
     name: bank.rest
   datasource:
-    url: ${POSTGRES_URL:jdbc:postgresql://localhost:5432/bank-cards}
+    url: ${POSTGRES_URL:jdbc:postgresql://postgres:5432/bank-cards}
     username: ${POSTGRES_USER:postgres}
     password: ${POSTGRES_PASSWORD:postgres}
   jpa:

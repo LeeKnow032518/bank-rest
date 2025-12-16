@@ -1,15 +1,15 @@
 package com.example.bank.rest.dto.cards;
 
 import com.example.bank.rest.util.CardStatus;
-import lombok.Builder;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
+import lombok.*;
 
 import java.math.BigDecimal;
 
 @Data
 @Builder(toBuilder = true)
 @EqualsAndHashCode
+@AllArgsConstructor
+@NoArgsConstructor
 public class CardDto {
 
     private String maskedCardNumber;

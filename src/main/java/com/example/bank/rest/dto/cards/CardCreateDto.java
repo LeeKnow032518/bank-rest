@@ -1,13 +1,14 @@
 package com.example.bank.rest.dto.cards;
 
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
+
 import java.math.BigDecimal;
 
 @Getter
 @Setter
 @Builder(toBuilder = true)
+@AllArgsConstructor
+@NoArgsConstructor
 public class CardCreateDto {
 
     private String cardNumber;

@@ -1,0 +1,35 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-users-table
+      author: leeknow
+      changes:
+        - createTable:
+            tableName: user_details
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: username
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: login
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: password
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: role
+                  type: VARCHAR(20)
+                  constraints:
+                    nullable: false
+                    checkConstraint: "status IN('USER', 'ADMIN')"

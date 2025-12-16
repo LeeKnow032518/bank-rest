@@ -1,0 +1,24 @@
+databaseChangeLog:
+  - changeSet:
+      id: insert-admin
+      author: leeknow
+      changes:
+        - insert:
+            schemaName: public
+            tableName: user_details
+            columns:
+              - column:
+                  name: id
+                  value: 1
+              - column:
+                  name: username
+                  value: ADMIN NAME
+              - column:
+                  name: login
+                  value: admin
+              - column:
+                  name: password
+                  value: adminpassword
+              - column:
+                  name: role
+                  value: admin

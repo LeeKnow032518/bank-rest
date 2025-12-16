@@ -1,4 +1,4 @@
-package com.example.bank.rest.service;
+package com.example.bank.rest.service.auth;
 
 import com.example.bank.rest.dto.auth.AuthResponse;
 import com.example.bank.rest.dto.auth.LoginRequest;
@@ -24,20 +24,20 @@ public class AuthService {
     }
 
     public ResponseEntity<AuthResponse> authenticate(LoginRequest request){
-        String username = request.getUsername();
+        String username = request.getLogin();
         String password = request.getPassword();
 
-        UserDetails user = userRepository.findByUsername(username)
+        UserDetails user = userRepository.findByLogin(username)
             .orElseThrow(() -> new UsernameNotFoundException("Пользователь не найден"));
 
         if(user.getRole().equals("user") && user.getPassword().equals(password)){
-            String token = jwtService.generateToken(user.getUsername(), RoleEnum.USER);
+            String token = jwtService.generateToken(user.getLogin()+ " " +user.getId(), RoleEnum.USER);
             return ResponseEntity.ok(new AuthResponse(token, RoleEnum.USER));
         }
         if(user.getRole().equals("admin") && user.getPassword().equals(password)){
-            String token = jwtService.generateToken(user.getUsername(), RoleEnum.ADMIN);
+            String token = jwtService.generateToken(user.getLogin(), RoleEnum.ADMIN);
             return ResponseEntity.ok(new AuthResponse(token, RoleEnum.ADMIN));
         }
-        return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
+        return ResponseEntity.status(401).build();
     }
 }

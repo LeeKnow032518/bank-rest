@@ -2,7 +2,7 @@ package com.example.bank.rest.controller.auth;
 
 import com.example.bank.rest.dto.auth.AuthResponse;
 import com.example.bank.rest.dto.auth.LoginRequest;
-import com.example.bank.rest.service.AuthService;
+import com.example.bank.rest.service.auth.AuthService;
 import io.swagger.v3.oas.annotations.Parameter;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;

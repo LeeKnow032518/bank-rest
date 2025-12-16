@@ -13,10 +13,6 @@ spring:
     enabled: true
     change-log: classpath:db/changelog/db.changelog-master.yaml
 
-app:
-  security:
-    secret: ${SECURITY_SECRET:d534560ff5c15803a1185f93d271ec7e}
-
 server:
   servlet:
     contextPath: /

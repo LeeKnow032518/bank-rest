@@ -1,10 +1,8 @@
 package com.example.bank.rest.entity;
 
 import com.example.bank.rest.util.CardStatus;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+import lombok.Builder;
 import lombok.Data;
 
 import java.math.BigDecimal;
@@ -12,6 +10,7 @@ import java.time.LocalDateTime;
 
 @Entity
 @Data
+@Builder(toBuilder = true)
 public class BankCards {
 
     @Id
@@ -22,7 +21,9 @@ public class BankCards {
 
     private String maskedCardNumber;
 
-    private String cardOwner;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id", nullable = false)
+    private UserDetails user;
 
     private Short expiryMonth;
 

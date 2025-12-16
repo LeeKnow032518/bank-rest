@@ -1,7 +1,7 @@
 package com.example.bank.rest.util.mapstruct;
 
-import com.example.bank.rest.dto.CardCreateDto;
-import com.example.bank.rest.dto.CardDto;
+import com.example.bank.rest.dto.cards.CardCreateDto;
+import com.example.bank.rest.dto.cards.CardDto;
 import com.example.bank.rest.entity.BankCards;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;

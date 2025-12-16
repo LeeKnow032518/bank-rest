@@ -12,6 +12,9 @@ databaseChangeLog:
                   value: 1
               - column:
                   name: username
+                  value: ADMIN NAME
+              - column:
+                  name: login
                   value: admin
               - column:
                   name: password

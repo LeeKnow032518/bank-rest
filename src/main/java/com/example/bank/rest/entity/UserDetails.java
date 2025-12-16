@@ -1,13 +1,15 @@
 package com.example.bank.rest.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+import lombok.Builder;
 import lombok.Data;
+
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Data
+@Builder(toBuilder = true)
 public class UserDetails {
 
     @Id
@@ -16,7 +18,12 @@ public class UserDetails {
 
     private String username;
 
+    private String login;
+
     private String password;
 
     private String role;
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private Set<BankCards> cards = new HashSet<>();
 }

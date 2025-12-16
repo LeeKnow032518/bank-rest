@@ -2,8 +2,10 @@ package com.example.bank.rest.controller.auth;
 
 import com.example.bank.rest.dto.auth.AuthResponse;
 import com.example.bank.rest.dto.auth.LoginRequest;
+import io.swagger.v3.oas.annotations.OpenAPIDefinition;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
+import io.swagger.v3.oas.annotations.info.Info;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
@@ -15,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+@OpenAPIDefinition(info = @Info(title = "API аутентификации", version = "1.0"))
 @Validated
 @Tag(name = "Аутентификация", description = "Получение JWT-токена")
 public interface AuthController {

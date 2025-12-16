@@ -1,16 +1,20 @@
-package com.example.bank.rest.dto;
+package com.example.bank.rest.dto.cards;
 
 import com.example.bank.rest.util.CardStatus;
+import lombok.Builder;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 import java.math.BigDecimal;
 
 @Data
+@Builder(toBuilder = true)
+@EqualsAndHashCode
 public class CardDto {
 
     private String maskedCardNumber;
 
-    private String cardOwner;
+    private String username;
 
     private Integer expiryMonth;
 

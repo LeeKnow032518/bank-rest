@@ -1,4 +1,4 @@
-package com.example.bank.rest.service;
+package com.example.bank.rest.service.admin;
 
 import javax.crypto.Cipher;
 import javax.crypto.KeyGenerator;

@@ -1,17 +1,16 @@
-package com.example.bank.rest.dto;
+package com.example.bank.rest.dto.cards;
 
-import lombok.Data;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 import java.math.BigDecimal;
 
 @Getter
 @Setter
+@Builder(toBuilder = true)
 public class CardCreateDto {
 
     private String cardNumber;
-
-    private String cardOwner;
 
     private Integer expiryMonth;
 
